@@ -9,10 +9,18 @@ const app = express();
 
 const port = 3000;
 
+//Cors Middleware
+app.use(cors());
+
+//Body Parser Middleware
+app.use(bodyParser.json());
+
+//Index Route
 app.get('/', (req, res) => {
     res.send('Invalid endpoint');
 });
 
+//Start Server
 app.listen(port, () => {
     console.log("Server started on port "+port);
 });
