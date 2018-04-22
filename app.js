@@ -30,6 +30,7 @@ app.use(cors());
 
 //Body Parser Middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:false }));
 
 //Passport Middleware
 app.use(passport.initialize());
@@ -43,8 +44,6 @@ app.use('/users', users);
 app.get('/', (req, res) => {
     res.send('Invalid endpoint');
 });
-
-
 
 //Start Server
 app.listen(port, () => {
